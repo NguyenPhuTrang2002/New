@@ -19,23 +19,107 @@ function Index() {
     }
   ]
   const OPTIONS = ["Related", "worldwide shipping", "under $50", "kitten", "plastic plugs", "pucker shoes", "vintage typewriter"]
-  const [ArrayProduct, setArrayProduct] = useState([]);
-  useEffect(() => {
-    fetch('http://localhost:5000/api/products')
-      .then(res => res.json())
-      .then(res => setArrayProduct(res))
-      .catch(err => console.error(err))
-  }, [])
-
+  // const [ArrayProduct, setArrayProduct] = useState([]);
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/api/products')
+  //     .then(res => res.json())
+  //     .then(res => setArrayProduct(res))
+  //     .catch(err => console.error(err))
+  // }, [])
+  const ArrayProducts = [
+    {
+      img: "./img/image.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image2.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image3.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image4.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image5.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image6.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image7.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image8.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image9.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image10.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+    {
+      img: "./img/image7  .png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    }, {
+      img: "./img/image3.png",
+      content: "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      price: "$13.95",
+      review: "1258 bids, 359 watchers $5.95 for shipping",
+      point: "49.50"
+    },
+  ]
   const [activeMenu, setActiveMenu] = useState(null);
   return (
     <div className="">
-      <div className="flex">
-        <div className=" mt-[35px] mb-[40px]">
+      <div className="flex justify-between mr-4">
+        <div className=" mt-[35px] mb-[40px] ">
           {MENU.map((menu, index) => (
             <MenuItem data={menu} />
           ))}
-          <div className="ml-[500px] inline-flex justify-center items-center">
+          <div className="inline-flex justify-center items-center ml-[235px]">
             {TAGS.map((tag, index) => (
               <a key={index} className={`inline-flex w-[85px] h-[36px] items-center justify-center rounded-md ${tag === "Auction" ? " bg-white box-shadow text-[#2264D1]" : "bg-[#EBF2FF]"}`} id="tags">
                 {tag}
@@ -43,7 +127,7 @@ function Index() {
             ))}
           </div>
         </div>
-        <div className="flex ml-[150px] right-1 items-center mb-1">
+        <div className="flex right-1 items-center mb-1">
           <div className="flex items-center rounded-md justify-center bg-[#EBF2FF] w-[68px] h-[36px]">
             <svg className="inline-block" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="view-list (1)">
@@ -60,21 +144,18 @@ function Index() {
             </svg>
           </div>
         </div>
-
-
-
       </div>
 
-      <div className="mx-4 flex flex-wrap space-x-2">
+      <div className="flex flex-wrap space-x-2">
         {OPTIONS.map((option, index) => (
-          <a key={index} className=" w-full sm:w-[150px] h-[40px] rounded-2xl bg-[#EDEDF0] text-center flex items-center justify-center mb-2 " id="option">
+          <a key={index} className=" w-full sm:w-[150px] h-[40px] rounded-2xl bg-[#EDEDF0] text-center flex items-center justify-center mb-2 ml-4 " id="option">
             {option}
           </a>
         ))}
       </div>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 border-b-1 border-[#EDEDF0] mb-10 rounded-2xl shadow-md">
-        {ArrayProduct.map((ars, index) => (
+        {ArrayProducts.map((ars, index) => (
           <Product key={index} img={ars.img} content={ars.content} price={ars.price} review={ars.review} point={ars.point} />
         ))}
       </div>
